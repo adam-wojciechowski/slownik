@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+    <title>Panel Administracyjny Słownika</title>
+    <link rel="stylesheet" href="tpl/style.css" media="screen">
+</head>
+
+<body>
+	<header>
+		<h1>Słownik - Panel Administracyjny</h1>
+		<hr />
+		<p>Szybkie menu: <a href="index.pl">Przejdź do słownika</a> | <a href="admin.pl?action=wAdd">Dodaj nowe słowo</a> | <a href="admin.pl?action=dAdd">Dodaj nowy słownik</a></p>
+	</header>
+	
+	<article>
+		<div class="komunkikaty">
+			<!-- errorCode -->
+		</div>
+	</article>
+	
+	<article>
+		<div class="slowa">
+			<h2>Słowa:</h2>
+			<form method="post" action="admin.pl">
+				<p><!-- WordAction --> <input type="hidden" name="WordAction" value="WordAdd" /> słowo: 
+				<input type="text" placeholder="słowo" name="WordName" /> <!-- WordAction2 -->: 
+				<select name="WordLang">
+					<!-- WordLangOptions -->
+				</select>
+				<input type="hidden" name="WordLang2" />
+				<input type="hidden" name="WordId" />
+				<input type="hidden" name="WordTransof" />
+				<button type="submit">Wykonaj</button></p>
+			</form>			
+		</div>
+	</article>
+	
+	<article>
+	<div class="tlumaczenia">
+		<h2>Tłumaczenia:</h2>
+		<form method="post" action="admin.pl">
+			<p><button type="submit">Wyszukaj</button> słowo:
+			<input type="text" placeholder="słowo" name="findWord" /> do tłumaczenia, szukaj w słowniku:
+			<select name="findLang">
+				<option value="null">dowolnym</option>
+				<!-- WordLangOptions -->
+			</select>			
+			</p>
+		</form>
+		<ul>
+			<!-- tableWordLists -->
+		</ul>
+	</div>
+	</article>
+	
+	<article>
+	<div class="slowniki">
+		<h2>Słowniki:</h2>
+		<form method="post" action="admin.pl">
+			<p><!-- LangAction --> <input type="hidden" name="LangAction" value="LangAdd" /> język: 
+			<input type="text" placeholder="Polski" name="LangName" /> o kodzie: 
+			<input id="LangCode" type="text" maxlength="2" placeholder="pl" name="LangCode" />, a na liście wyswietlaj w języku: 
+			<input type="text" placeholder="polskim" name="LangDesc" /> 
+			<input type="hidden" name="LangId" />
+			<button type="submit">Wykonaj</button></p>
+		</form>		
+
+		<table>
+			<thead>
+				<tr>
+					<th>Lp</th>
+					<th>Język</th>
+					<th>Kod języka</th>
+					<th>Wyświetlanie</th>
+					<th>Zarządzanie</th>
+				</tr>
+			</thead>
+				<!-- tableLanguagesList -->
+		</table>
+	</div>	
+	</article>
+	
+</body>
+
+</html>

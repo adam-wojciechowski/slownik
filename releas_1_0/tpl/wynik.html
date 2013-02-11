@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+	<meta charset="utf-8">
+    <title><!-- htmlTitle --></title>
+    <link rel="stylesheet" href="tpl/style.css" media="screen">
+</head>
+
+<body>
+	<header>
+		<h1>Witaj w słowniku</h1>
+		<hr />
+		<div class="szukaj">
+			<form method="post" action="index.pl">
+				<button type="submit">Szukaj</button> słowa: 
+				<input type="text" placeholder="wpisz szukane słowo..." name="findWord" /> w
+				<select name="findLang">
+					<option value="null">dowolnym</option>
+					<!-- formLangList -->
+				</select> słowniku.
+			</form>
+		</div>
+	</header>
+	<hr />
+	
+	<article>
+		<div class="komunikaty">
+			<!-- errorCode -->
+		</div>
+		<div class="wynik">
+			<ul>
+			<!-- tableWordLists -->
+			</ul>
+		</div>
+	</article>
+
+	<footer>
+		<hr />
+		<p><a href="admin.pl?action=wAdd">Dodaj nowe słowo</a> | <a href="admin.pl">Panel Administracyjny</a></p>
+	</footer>
+</body>
+
+</html>
